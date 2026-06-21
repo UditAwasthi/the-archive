@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Libre Caslon Text", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --font-display-lg: "Libre Caslon Text", serif;
+  --font-headline-lg: "Libre Caslon Text", serif;
+  --font-headline-lg-mobile: "Libre Caslon Text", serif;
+  --font-headline-md: "Libre Caslon Text", serif;
+  --font-body-lg: "Geist", sans-serif;
+  --font-body-md: "Geist", sans-serif;
+  --font-label-sm: "JetBrains Mono", monospace;
+  --font-label-xs: "JetBrains Mono", monospace;
 
   --color-parchment: #f5f0e8;
   --color-parchment-dark: #e8e0d0;
@@ -12,13 +21,93 @@
   --color-ink-light: #3d3d3d;
   --color-ink-muted: #6b6b6b;
   --color-ink-faint: #9a9a9a;
-  --color-accent-gold: #c8a96e;
+  --color-accent-gold: #D4AF37;
   --color-accent-warm: #b8860b;
   --color-shelf-wood: #2c1810;
   --color-shelf-wood-light: #4a3020;
   --color-shelf-shadow: #1a0e08;
   --color-page-shadow: rgba(0, 0, 0, 0.08);
   --color-gutter: rgba(0, 0, 0, 0.04);
+
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c9c7bd;
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-outline: #929189;
+  --color-outline-variant: #474740;
+  --color-primary: #ffffff;
+  --color-on-primary: #31312b;
+  --color-secondary: #c7c6c6;
+  --color-on-secondary: #303031;
+  
+  --spacing-margin-desktop: 80px;
+  --spacing-section-gap: 160px;
+  --spacing-unit: 4px;
+  --spacing-gutter: 32px;
+  --spacing-margin-mobile: 24px;
+  --spacing-max-width: 1440px;
+}
+
+@utility text-display-lg {
+  font-size: 84px;
+  line-height: 92px;
+  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+@utility text-headline-lg {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+@utility text-headline-lg-mobile {
+  font-size: 32px;
+  line-height: 40px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+@utility text-headline-md {
+  font-size: 32px;
+  line-height: 40px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+@utility text-body-md {
+  font-size: 16px;
+  line-height: 28px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+@utility text-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+@utility text-label-xs {
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-weight: 500;
 }
 
 @layer base {
@@ -30,8 +119,10 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-shelf-wood);
-    color: var(--color-ink);
+    background-color: #0A0A0A;
+    color: #E5E2E1;
+    overflow-x: hidden;
+    cursor: crosshair;
   }
 
   ::selection {
@@ -77,6 +168,44 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .book-container {
+    perspective: 2000px;
+  }
+
+  .book-card {
+    transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1, 1, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  .book-card:hover {
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.04, 1.04, 1.04);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.15);
+  }
+
+  .backdrop-blur-archive {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Subtle noise texture */
+  .noise::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    z-index: 50;
+  }
+
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
   }
 }
 

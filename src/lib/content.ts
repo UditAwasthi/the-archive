@@ -2,74 +2,105 @@ import type { TimelineEntry, Project, Experiment, FutureItem } from "@/types";
 
 export const timeline: TimelineEntry[] = [
   {
-    year: "2018",
-    title: "First Line of Code",
-    description:
-      "Wrote the first program in C. A simple Hello World that opened a door to an entirely new way of thinking.",
-    type: "milestone",
-  },
-  {
-    year: "2019",
-    title: "High School Graduation",
-    description:
-      "Completed secondary education with a focus on mathematics and science. Knew that computer science was the path forward.",
-    type: "education",
-  },
-  {
-    year: "2020",
-    title: "University Begins",
-    description:
-      "Started pursuing a degree in Computer Science. The pandemic made it remote, but the learning never stopped.",
-    type: "education",
-  },
-  {
     year: "2021",
-    title: "Competitive Programming",
+    title: "First Steps Into Programming",
     description:
-      "Discovered competitive programming. Started solving problems on LeetCode and Codeforces daily.",
+      "Started learning Python during Class 9. Built small scripts, explored automation, and discovered a fascination with creating things through code.",
     type: "milestone",
   },
   {
     year: "2022",
-    title: "First Real Project",
+    title: "Exploring Development",
     description:
-      "Built the first full-stack application. Learned about databases, APIs, deployment, and shipping to real users.",
-    type: "career",
-  },
-  {
-    year: "2023",
-    title: "Open Source Contributions",
-    description:
-      "Started contributing to open source. Learned the value of community, code review, and building in public.",
-    type: "career",
+      "Experimented with web development, problem solving, and programming fundamentals while continuing school studies.",
+    type: "milestone",
   },
   {
     year: "2024",
-    title: "Deep Specialization",
+    title: "Completed Class 12",
     description:
-      "Focused on modern web technologies \u2014 React, Next.js, TypeScript. Started building products with real impact.",
+      "Finished higher secondary education and committed to pursuing a career in technology and software engineering.",
+    type: "education",
+  },
+  {
+    year: "2025",
+    title: "Joined PSIT Kanpur",
+    description:
+      "Started B.Tech in Computer Science and Engineering. Shifted focus from learning technologies to building complete software products.",
+    type: "education",
+  },
+  {
+    year: "2025",
+    title: "Border Intruder Alert System",
+    description:
+      "Built a computer vision powered surveillance system using YOLO for real-time intrusion detection and monitoring. The project became a TechExpo finalist.",
     type: "career",
   },
   {
     year: "2025",
-    title: "The Archive",
+    title: "Pylotix",
     description:
-      "Created this living archive to document everything. A commitment to building, learning, and sharing in the open.",
-    type: "personal",
+      "Developed an AI-powered learning platform focused on improving educational experiences through intelligent tools and personalized learning workflows.",
+    type: "career",
+  },
+  {
+    year: "2026",
+    title: "Zynon",
+    description:
+      "Started building a social platform focused on communities, real-time interaction, scalable architecture, and AI-native experiences across web and mobile platforms.",
+    type: "career",
+  },
+  {
+    year: "2026",
+    title: "Livescope",
+    description:
+      "Building Livescope while expanding expertise in backend engineering, AI systems, distributed architectures, and product development.",
+    type: "career",
   },
 ];
 
 export const readingList = [
-  { title: "Clean Code", author: "Robert C. Martin", category: "Engineering" },
-  { title: "Designing Data-Intensive Applications", author: "Martin Kleppmann", category: "Systems" },
-  { title: "The Pragmatic Programmer", author: "Hunt & Thomas", category: "Engineering" },
-  { title: "Zero to One", author: "Peter Thiel", category: "Thinking" },
-  { title: "Atomic Habits", author: "James Clear", category: "Growth" },
-  { title: "Deep Work", author: "Cal Newport", category: "Productivity" },
-  { title: "Structure and Interpretation of Computer Programs", author: "Abelson & Sussman", category: "Foundations" },
-  { title: "The Art of Doing Science and Engineering", author: "Richard Hamming", category: "Thinking" },
+  {
+    title: "What Every BODY Is Saying",
+    author: "Joe Navarro",
+    category: "Communication",
+  },
+  {
+    title: "The Power of Your Subconscious Mind",
+    author: "Joseph Murphy",
+    category: "Psychology",
+  },
+  {
+    title: "Atomic Habits",
+    author: "James Clear",
+    category: "Growth",
+  },
+  {
+    title: "The Almanack of Naval Ravikant",
+    author: "Eric Jorgenson",
+    category: "Thinking",
+  },
+  {
+    title: "Zero to One",
+    author: "Peter Thiel",
+    category: "Startups",
+  },
+  {
+    title: "Designing Data-Intensive Applications",
+    author: "Martin Kleppmann",
+    category: "Systems",
+  },
+  {
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    category: "Thinking",
+  },
+  {
+    title: "Deep Work",
+    author: "Cal Newport",
+    category: "Productivity",
+  },
 ];
-
 export const philosophy = [
   "Ship early, iterate often. Perfection is the enemy of progress.",
   "Write code for humans first, machines second.",
@@ -80,60 +111,62 @@ export const philosophy = [
 ];
 
 export const projects: Project[] = [
-  {
-    slug: "communication-coach-ai",
-    title: "Communication Coach AI",
-    mission: "Build an AI-powered platform for improving communication skills through practice and feedback.",
-    problem:
-      "Most people struggle with public speaking and communication but lack access to personalized coaching and feedback loops.",
-    solution:
-      "A full-stack Next.js application that uses AI to analyze speech patterns, provide real-time feedback, and create personalized improvement plans.",
-    architecture:
-      "Next.js 15 App Router with server components for data fetching, client components for interactive coaching sessions, and API routes for AI integration.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Prisma", "PostgreSQL"],
-    challenges: [
-      "Real-time audio processing in the browser",
-      "Designing an intuitive feedback interface",
-      "Balancing AI accuracy with response latency",
-    ],
-    results: [
-      "Functional prototype with speech analysis",
-      "YouTube playlist ingestion pipeline",
-      "Clean, accessible UI with responsive design",
-    ],
-    links: [
-      { label: "Repository", url: "https://github.com/UditAwasthi/communication-coach-ai" },
-    ],
-    year: "2025",
-    status: "active",
-  },
-  {
-    slug: "zynon-mobile",
-    title: "Zynon",
-    mission: "Create a mobile-first social media platform for authentic real-time interaction.",
-    problem:
-      "Existing social platforms prioritize algorithmic feeds over genuine human connection. Users want real, unfiltered interaction.",
-    solution:
-      "A React Native mobile application with a GraphQL backend, emphasizing real-time features, clean design, and privacy-first architecture.",
-    architecture:
-      "React Native client with Apollo Client connecting to a Node.js/Express GraphQL API. Prisma ORM with PostgreSQL for data persistence.",
-    stack: ["React Native", "TypeScript", "GraphQL", "Apollo Client", "Node.js", "Prisma", "PostgreSQL"],
-    challenges: [
-      "Cross-platform native performance optimization",
-      "Real-time data synchronization",
-      "Secure token-based authentication flow",
-    ],
-    results: [
-      "Fully functional mobile client for iOS and Android",
-      "Secure authentication with Google Sign-In",
-      "Clean, themeable UI with light/dark mode support",
-    ],
-    links: [
-      { label: "Repository", url: "https://github.com/UditAwasthi/zynon-mobile" },
-    ],
-    year: "2025",
-    status: "active",
-  },
+ {
+  slug: "zynon",
+
+  title: "Zynon",
+
+  mission:
+    "Build a modern social ecosystem where communities, conversations, and digital identity matter more than algorithms.",
+
+  problem:
+    "Most social platforms are optimized for engagement and endless scrolling rather than meaningful interaction, community building, and user ownership. Users increasingly want spaces that feel personal, intentional, and authentic.",
+
+  solution:
+    "Zynon is a social platform being built across web and mobile that combines communities, profiles, content creation, messaging, and AI-powered experiences into a unified ecosystem. The goal is to create a platform that feels modern, scalable, and community-first.",
+
+  architecture:
+    "A TypeScript-first architecture powered by React Native and Next.js clients, communicating with a GraphQL backend. Prisma ORM manages database access while PostgreSQL provides persistence. The system is designed around modular services, scalable APIs, and real-time capabilities.",
+
+  stack: [
+    "Next.js",
+    "React Native",
+    "TypeScript",
+    "GraphQL",
+    "Node.js",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "Tailwind CSS",
+  ],
+
+  challenges: [
+    "Designing a scalable social platform architecture",
+    "Maintaining feature parity across web and mobile applications",
+    "Building secure authentication and account management systems",
+    "Designing real-time interactions and community experiences",
+    "Balancing product ambition with development velocity"
+  ],
+
+  results: [
+    "Established the foundation of a complete social ecosystem",
+    "Implemented GraphQL-first backend architecture",
+    "Built cross-platform web and mobile clients",
+    "Created reusable design systems and application infrastructure",
+    "Continuing active development and expansion of platform capabilities"
+  ],
+
+  links: [
+    {
+      label: "GitHub",
+      url: "<YOUR_ZYNON_REPOSITORY_URL>"
+    }
+  ],
+
+  year: "2026",
+
+  status: "active"
+}
 ];
 
 export const experiments: Experiment[] = [

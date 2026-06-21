@@ -40,15 +40,15 @@ export default function BookReader({ book, onClose, pages }: BookReaderProps) {
 
   const pageVariants = {
     enter: (dir: number) => ({
-      x: dir > 0 ? 300 : -300,
+      rotateY: dir > 0 ? 80 : -80,
       opacity: 0,
     }),
     center: {
-      x: 0,
+      rotateY: 0,
       opacity: 1,
     },
     exit: (dir: number) => ({
-      x: dir > 0 ? -300 : 300,
+      rotateY: dir > 0 ? -80 : 80,
       opacity: 0,
     }),
   };
@@ -113,7 +113,7 @@ export default function BookReader({ book, onClose, pages }: BookReaderProps) {
         </div>
 
         {/* Book spread */}
-        <div className="flex-1 flex rounded-lg overflow-hidden shadow-2xl min-h-0">
+        <div className="flex-1 flex rounded-lg overflow-hidden shadow-2xl min-h-0 relative">
           {/* Left page - Chapter navigation (desktop only) */}
           <div className="hidden lg:flex w-64 xl:w-72 paper-texture page-shadow-left flex-col">
             <div className="p-6 xl:p-8 flex-1 overflow-y-auto scrollbar-hide">
@@ -144,8 +144,11 @@ export default function BookReader({ book, onClose, pages }: BookReaderProps) {
           {/* Gutter */}
           <div className="hidden lg:block w-px bg-gutter" />
 
+          {/* Spine Fold Shadow Overlay */}
+          <div className="hidden lg:block absolute left-[256px] xl:left-[288px] top-0 bottom-0 w-[24px] -ml-[12px] bg-gradient-to-r from-black/0 via-black/15 to-black/0 pointer-events-none z-30" />
+
           {/* Right page - Content */}
-          <div className="flex-1 relative bg-parchment overflow-hidden">
+          <div className="flex-1 relative bg-parchment overflow-hidden [perspective:1500px]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentPage}
@@ -154,7 +157,8 @@ export default function BookReader({ book, onClose, pages }: BookReaderProps) {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
                 className="absolute inset-0 overflow-y-auto scrollbar-hide page-shadow-right"
               >
                 {page.content}
