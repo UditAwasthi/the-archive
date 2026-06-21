@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# THE ARCHIVE
+
+A living digital archive documenting the projects, achievements, knowledge, experiments, and ambitions of a software engineer. Built as an interactive book collection experience.
+
+## Tech Stack
+
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React
+- MDX Content
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Copy `.env.example` to `.env.local` and fill in your details
+3. Install dependencies and run:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All personal data is driven by environment variables. See `.env.example` for the full list.
 
-## Learn More
+## Books
 
-To learn more about Next.js, take a look at the following resources:
+| Book | Content |
+|------|---------|
+| Origins | Personal story, timeline, philosophy |
+| Field Reports | Project case studies |
+| Code Records | GitHub activity & stats |
+| Problem Codex | LeetCode & Codeforces stats |
+| Network | Social presence |
+| Experiments | Research notebook |
+| Future Releases | Ambitions & roadmap |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MDX content files live in `content/`. Edit them without touching UI code.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel-ready. Push to deploy.
