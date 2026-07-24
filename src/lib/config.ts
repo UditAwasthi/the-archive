@@ -1,24 +1,24 @@
 export const siteConfig = {
-  name: process.env.NEXT_PUBLIC_NAME || "Archive Owner",
-  email: process.env.NEXT_PUBLIC_EMAIL || "",
+  name: "Udit Awasthi",
+  email: "uditawasthi19jan@gmail.com",
   github: {
-    url: process.env.NEXT_PUBLIC_GITHUB_URL || "",
-    username: process.env.NEXT_PUBLIC_GITHUB_USERNAME || "",
+    url: "https://github.com/UditAwasthi",
+    username: "UditAwasthi",
   },
   linkedin: {
-    url: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
+    url: "https://www.linkedin.com/in/udit-awasthi-2b546a380/",
   },
   instagram: {
-    url: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
+    url: "https://www.instagram.com/_udit_awasthi_/",
   },
   twitter: {
-    url: process.env.NEXT_PUBLIC_TWITTER_URL || "",
+    url: "https://twitter.com/udit_awasthi",
   },
   leetcode: {
-    username: process.env.NEXT_PUBLIC_LEETCODE_USERNAME || "",
+    username: "eXLROoqsoP",
   },
   codeforces: {
-    username: process.env.NEXT_PUBLIC_CODEFORCES_USERNAME || "",
+    username: "updating soon",
   },
-  resumeUrl: process.env.NEXT_PUBLIC_RESUME_URL || "",
+  resumeUrl: "updating soon",
 };
